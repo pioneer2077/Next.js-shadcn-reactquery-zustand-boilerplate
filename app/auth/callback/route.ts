@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const code = searchParams.get("code");
   // if "next" is in param, use it as the redirect URL
   const next = searchParams.get("next") ?? "/";
-
+  console.log({ code, next });
   if (code) {
     const cookieStore = cookies();
     const supabase = createServerClient(
@@ -32,6 +32,7 @@ export async function GET(request: Request) {
       return NextResponse.redirect(`${origin}${next}`);
     }
   }
+  console.log("Error: No code found in request URL");
 
   // return the user to an error page with instructions
   return NextResponse.redirect(`${origin}/auth/auth-code-error`);

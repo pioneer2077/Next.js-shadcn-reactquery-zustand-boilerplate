@@ -7,9 +7,9 @@ import { Providers } from "@/model/provider";
 import GithubOauthIcon from "@/components/icons/GithubOauthIcon";
 import GoogleOauthIcon from "@/components/icons/GoogleOauthIcon";
 
-export default function page() {
+export default async function page() {
   return (
-    <div className=" flex items-center justify-center w-full h-screen">
+    <div className=" flex items-center justify-center h-screen">
       <div className=" w-96 rounded-md border p-5 space-y-5 relative bg-slate-900">
         <div className="flex items-center gap-2">
           <KeyRound />
